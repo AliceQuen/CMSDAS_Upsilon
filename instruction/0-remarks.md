@@ -34,7 +34,7 @@ Each time you start working in your project area on `lxplus8`, initialize the en
 ```bash
 ssh <cern_username>@lxplus8.cern.ch
 
-cd /path/to/CMSDAS
+cd /path/to/CMSDAS_Upsilon
 
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 voms-proxy-init -voms cms

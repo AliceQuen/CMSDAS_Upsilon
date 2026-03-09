@@ -18,7 +18,7 @@ void acceptance()
 {
   // Config
   const char* kTreeName   = "rootuple/oniaTree";
-  const char* kInputRoot  = "/afs/ihep.ac.cn/users/y/yiyangzhao/Research/CMS_THU_Space/CMSDAS/mc/merged/ParticleGun.root";
+  const char* kInputRoot  = "/eos/home-y/yiyangz/public/CMSDAS/mc/ParticleGun.root";
   const char* kOutDir     = "results";
   const char* kOutCSV     = "results/acceptance.csv";
   const char* kOutPDF     = "results/acceptance.pdf";

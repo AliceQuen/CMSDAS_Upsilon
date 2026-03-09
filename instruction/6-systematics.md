@@ -36,7 +36,7 @@ Threshold-variation setup:
 > #### **Task**
 > 1. Copy and modify the acceptance program variants:
 >    ```bash
->    cd /path/to/CMSDAS/acceptance
+>    cd /path/to/CMSDAS_Upsilon/acceptance
 >    cp acceptance.C acceptance_pt3p0.C
 >    cp acceptance.C acceptance_pt3p2.C
 >    ```

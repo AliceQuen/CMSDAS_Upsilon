@@ -35,13 +35,13 @@ Passed[iY][iPt] += 1.0;
 
 
 ```bash
-cd /path/to/CMSDAS/acceptance
+cd /path/to/CMSDAS_Upsilon/acceptance
 root -l acceptance.C
 ```
 
 Outputs are acceptance 2D maps in $(p_\mathrm{T},|y|)$:
-- `/path/to/CMSDAS/acceptance/results/acceptance.csv`
-- `/path/to/CMSDAS/acceptance/results/acceptance.pdf`
+- `/path/to/CMSDAS_Upsilon/acceptance/results/acceptance.csv`
+- `/path/to/CMSDAS_Upsilon/acceptance/results/acceptance.pdf`
 
 
 Statistical uncertainty is computed with Clopper-Pearson intervals:

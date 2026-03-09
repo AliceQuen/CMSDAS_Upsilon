@@ -5,7 +5,7 @@ This part combines $N$, $A$, $\epsilon$, and $\mathcal{L}$ to produce differenti
 ## Python Setup
 
 ```bash
-cd /path/to/CMSDAS
+cd /path/to/CMSDAS_Upsilon
 
 source /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el8-gcc11-opt/setup.sh
 
@@ -21,12 +21,12 @@ python3 -c "import pandas,numpy,matplotlib,mplhep; print('python packages ok')"
 - Any luminosity bias directly rescales the extracted cross section.
 
 ```bash
-cd /path/to/CMSDAS/luminosity
+cd /path/to/CMSDAS_Upsilon/luminosity
 python3 luminosity.py
 ```
 
 Output:
-- `/path/to/CMSDAS/luminosity/results/2025G.csv`
+- `/path/to/CMSDAS_Upsilon/luminosity/results/2025G.csv`
 
 
 ## Cross Section
@@ -38,12 +38,12 @@ $$
 Note: rapidity width is defined as $2\Delta|y|=\Delta y$.
 
 ```bash
-cd /path/to/CMSDAS/cross_section
+cd /path/to/CMSDAS_Upsilon/cross_section
 python3 cross_section.py
 ```
 
 Output:
-- `/path/to/CMSDAS/cross_section/results/cross_section.csv`
+- `/path/to/CMSDAS_Upsilon/cross_section/results/cross_section.csv`
 
 > #### **Question**
 > 1. The same program also reports the integrated cross sections of the three $\\Upsilon$ states in the region $|y|<2.4$ and $p_\mathrm{T}<130$ GeV; if your final target were only this integrated value, could you measure it with one very wide bin covering the full range?
@@ -56,8 +56,8 @@ python3 plot_comprison_13p6TeV.py
 ```
 
 Outputs:
-- `/path/to/CMSDAS/cross_section/results/cross_section.pdf`
-- `/path/to/CMSDAS/cross_section/results/2025vs2022.pdf`
+- `/path/to/CMSDAS_Upsilon/cross_section/results/cross_section.pdf`
+- `/path/to/CMSDAS_Upsilon/cross_section/results/2025vs2022.pdf`
 
 Plot meaning:
 - `plot.py` provides absolute differential cross-section distributions,

@@ -27,7 +27,7 @@
 #include <algorithm>
 
 static const std::vector<std::string> INPUT_FILES = {
-  "/afs/ihep.ac.cn/users/y/yiyangzhao/Research/CMS_THU_Space/CMSDAS/data/selected/2025G*"
+  "/eos/home-y/yiyangz/public/CMSDAS/data/2025G_Parking*"
 };
 
 static const char* TREE_PATH = "rootuple/mm_tree";

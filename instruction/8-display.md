@@ -5,12 +5,11 @@ This part shows how to visualize event topology with cmsShow.
 ## Python Setup
 
 ```bash
-cd /path/to/CMSDAS
+cd /path/to/CMSDAS_Upsilon
 
-source /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el8-gcc13-opt/setup.sh
-python3 -m venv .venv
-source .venv/bin/activate
+source /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el8-gcc11-opt/setup.sh
 
+python3 -c "import sys; print(sys.version)"
 python3 -c "import uproot,numpy; print('event display python setup ok')"
 ```
 
@@ -22,10 +21,11 @@ python3 -c "import uproot,numpy; print('event display python setup ok')"
 Run the script (example with ntuple input):
 
 ```bash
-cd /path/to/CMSDAS/event_display
+cd /path/to/CMSDAS_Upsilon/event_display
+
 python3 event_display.py \
   --dataset "/ParkingDoubleMuonLowMass0/Run2025G-PromptReco-v1/MINIAOD" \
-  --ntuple "/afs/ihep.ac.cn/users/y/yiyangzhao/Research/CMS_THU_Space/CMSDAS/data/selected/2025G0.root" \
+  --ntuple "/eos/home-y/yiyangz/public/CMSDAS/data/selected/2025G_Parking0.root" \
   --max-events 5 \
   --output-dir results
 ```

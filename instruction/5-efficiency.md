@@ -36,13 +36,13 @@ Passed[iY][iPt] += 1.0;
 ```
 
 ```bash
-cd /path/to/CMSDAS/efficiency/mc_efficiency
+cd /path/to/CMSDAS_Upsilon/efficiency/mc_efficiency
 root -l mc_efficiency.C
 ```
 
 Outputs are efficiency maps in $(p_\mathrm{T},|y|)$:
-- `/path/to/CMSDAS/efficiency/mc_efficiency/results/efficiency.csv`
-- `/path/to/CMSDAS/efficiency/mc_efficiency/results/efficiency.pdf`
+- `/path/to/CMSDAS_Upsilon/efficiency/mc_efficiency/results/efficiency.csv`
+- `/path/to/CMSDAS_Upsilon/efficiency/mc_efficiency/results/efficiency.pdf`
 
 
 > #### **Question**

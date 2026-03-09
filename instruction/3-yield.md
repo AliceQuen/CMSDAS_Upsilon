@@ -62,13 +62,13 @@ RooFitResult* fr = model.fitTo(
 
 ## Yield Fit
 ```bash
-cd /path/to/CMSDAS/yield
+cd /path/to/CMSDAS_Upsilon/yield
 root -l yield.C
 ```
 
 Outputs:
-- `/path/to/CMSDAS/yield/results/2025G/yields.csv`
-- `/path/to/CMSDAS/yield/results/2025G/results_ext.csv`
+- `/path/to/CMSDAS_Upsilon/yield/results/2025G/yields.csv`
+- `/path/to/CMSDAS_Upsilon/yield/results/2025G/results_ext.csv`
 - per-bin PDF files, for example `fit_pt_20-22_y_0p0-0p6.pdf`
 
 What you obtain from this step:

@@ -17,7 +17,7 @@ using namespace std;
 void mc_efficiency()
 {
   const char* kTreeName   = "rootuple/mm_tree";
-  const char* kInputRoot  = "/afs/ihep.ac.cn/users/y/yiyangzhao/Research/CMS_THU_Space/CMSDAS/mc/merged/Upsilon2MM*";
+  const char* kInputRoot  = "/eos/home-y/yiyangz/public/CMSDAS/mc/Upsilon2MM*";
   const char* kOutDir     = "results";
   const char* kOutCSV     = "results/efficiency.csv";
   const char* kOutPDF     = "results/efficiency.pdf";

@@ -10,7 +10,7 @@ We will use 2025 `ParkingDoubleMuonLowMass` samples in MINIAOD format:
 
 ## CMSSW
 ```bash
-cd /path/to/CMSDAS/data
+cd /path/to/CMSDAS_Upsilon/data
 
 cmsrel CMSSW_15_0_18
 cd CMSSW_15_0_18/src
@@ -89,11 +89,11 @@ crab status -d CernJobs/crab_CMSDAS_Upsilon_2025E_ParkingDoubleMuonLowMass0_v1
 ## Check Data Distributions
 Run the plotting program:
 ```bash
-cd /path/to/CMSDAS/data
+cd /path/to/CMSDAS_Upsilon/data
 root -l plot.C
 ```
 
-Inspect the output varible distributions in `/path/to/CMSDAS/data/results`.
+Inspect the output varible distributions in `/path/to/CMSDAS_Upsilon/data/results`.
 
 > #### **Task**
 > The current program draws variables distributions without applying any selections. To obtain variable distributions of events that are actually used in the analysis, the following selections mentioned earlier should be added inside the event loop:

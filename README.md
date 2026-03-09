@@ -12,4 +12,11 @@ This repository contains materials for measurements of cross-sections of $\Upsil
 - [Part 6 - Systematics](instruction/6-systematics.md)
 - [Part 7 - Results](instruction/7-results.md)
 - [Part 8 - Event Display (Optional)](instruction/8-display.md)
-- [Part 9 - Polarization Effects on Acceptance (Optional)](instruction/9-polarization.md)
+
+
+```bash
+ssh <cern_username>@lxplus8.cern.ch
+
+cd YourWorkSpace
+git clone git@github.com:yiyangzha/CMSDAS_Upsilon.git
+```
