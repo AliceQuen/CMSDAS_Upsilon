@@ -25,6 +25,12 @@ void draw_single(TH1D& hist, const std::string& output_file, bool logy) {
   canvas.SetMargin(0.12, 0.04, 0.12, 0.06);
   canvas.SetLogy(logy);
   hist.SetLineWidth(2);
+  if (!logy) {
+    hist.SetMinimum(0);
+  }
+  else {
+    hist.SetMinimum(0.1);
+  }
   hist.Draw("HIST");
   canvas.SaveAs(output_file.c_str());
 }

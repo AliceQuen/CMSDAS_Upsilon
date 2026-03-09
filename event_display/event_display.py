@@ -4,12 +4,11 @@ from __future__ import annotations
 import argparse
 import csv
 import glob
-import os
 import re
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable, List, Sequence, Tuple
+from typing import List, Sequence
 
 
 @dataclass(frozen=True)
@@ -17,7 +16,6 @@ class EventID:
     run: int
     lumi: int
     event: int
-    fill: str = "N/A"
 
     def as_pick_line(self) -> str:
         return f"{self.run}:{self.lumi}:{self.event}"
@@ -33,8 +31,7 @@ def parse_event_line(line: str) -> EventID | None:
     if len(parts) != 3:
         raise ValueError(f"Invalid event entry: {line.rstrip()} (expected run:lumi:event)")
     run, lumi, event = (int(parts[0]), int(parts[1]), int(parts[2]))
-    fill = fields[1] if len(fields) > 1 else "N/A"
-    return EventID(run=run, lumi=lumi, event=event, fill=fill)
+    return EventID(run=run, lumi=lumi, event=event)
 
 
 def read_event_list(path: Path) -> List[EventID]:
@@ -61,13 +58,9 @@ def unique_preserve_order(events: Sequence[EventID]) -> List[EventID]:
 
 def select_events_from_ntuple(ntuple_pattern: str, tree: str, max_events: int) -> List[EventID]:
     try:
-        import numpy as np
-        import uproot
+        import ROOT
     except ImportError as exc:
-        raise RuntimeError(
-            "Selecting events from ntuples requires uproot and numpy. "
-            "Install them first in your Python environment."
-        ) from exc
+        raise RuntimeError("Selecting events from ntuples with TLorentzVector branches requires PyROOT.") from exc
 
     files = sorted(glob.glob(ntuple_pattern))
     if not files and Path(ntuple_pattern).exists():
@@ -75,29 +68,68 @@ def select_events_from_ntuple(ntuple_pattern: str, tree: str, max_events: int) -
     if not files:
         raise FileNotFoundError(f"No files match ntuple pattern: {ntuple_pattern}")
 
-    branches = ["run", "lumiblock", "event", "trigger", "charge", "vProb"]
-    arrays = uproot.concatenate([f"{f}:{tree}" for f in files], branches, library="np")
+    chain = ROOT.TChain(tree)
+    for f in files:
+        added = chain.Add(f)
+        if added == 0:
+            raise RuntimeError(f"Failed to add file to TChain: {f}")
 
-    mask = np.ones_like(arrays["run"], dtype=bool)
-    if "trigger" in arrays:
-        mask &= arrays["trigger"] > 0
-    if "charge" in arrays:
-        mask &= arrays["charge"] == 0
-    if "vProb" in arrays:
-        mask &= arrays["vProb"] > 0.01
+    if chain.GetEntries() <= 0:
+        raise RuntimeError(f"No entries found in tree {tree}")
 
-    runs = arrays["run"][mask]
-    lumis = arrays["lumiblock"][mask]
-    events = arrays["event"][mask]
+    required = [
+        "run",
+        "lumiblock",
+        "event",
+        "nonia",
+        "trigger",
+        "charge",
+        "vProb",
+        "muonP_p4",
+        "muonM_p4",
+        "dimuon_p4",
+    ]
+
+    branches = {b.GetName() for b in chain.GetListOfBranches()}
+    missing = [name for name in required if name not in branches]
+    if missing:
+        raise RuntimeError(f"Missing required branches in {tree}: {', '.join(missing)}")
 
     selected: List[EventID] = []
     seen = set()
-    for run, lumi, evt in zip(runs, lumis, events):
-        key = (int(run), int(lumi), int(evt))
+
+    nentries = chain.GetEntries()
+    for i in range(nentries):
+        got = chain.GetEntry(i)
+        if got <= 0:
+            continue
+
+        muonP_p4 = chain.muonP_p4
+        muonM_p4 = chain.muonM_p4
+        dimuon_p4 = chain.dimuon_p4
+
+        if abs(muonP_p4.Eta()) > 2.0:
+            continue
+        if abs(muonM_p4.Eta()) > 2.0:
+            continue
+        if muonP_p4.Pt() <= 3.1:
+            continue
+        if muonM_p4.Pt() <= 3.1:
+            continue
+        if chain.nonia != 1 or not bool(chain.trigger) or chain.charge != 0 or chain.vProb <= 0.01:
+            continue
+        if dimuon_p4.Pt() < 30:
+            continue
+        if abs(dimuon_p4.Rapidity()) > 2.4:
+            continue
+
+        key = (int(chain.run), int(chain.lumiblock), int(chain.event))
         if key in seen:
             continue
-        selected.append(EventID(run=key[0], lumi=key[1], event=key[2], fill="N/A"))
+
+        selected.append(EventID(run=key[0], lumi=key[1], event=key[2]))
         seen.add(key)
+
         if len(selected) >= max_events:
             break
 
@@ -115,9 +147,9 @@ def write_event_files(events: Sequence[EventID], txt_path: Path, csv_path: Path)
 
     with csv_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
-        writer.writerow(["run", "lumi", "event", "fill"])
+        writer.writerow(["run", "lumi", "event"])
         for evt in events:
-            writer.writerow([evt.run, evt.lumi, evt.event, evt.fill])
+            writer.writerow([evt.run, evt.lumi, evt.event])
 
 
 def extract_copy_command(text: str) -> str:
@@ -235,7 +267,7 @@ def main() -> int:
     print(f"[OK] Wrote event table: {event_csv}")
     print("[INFO] Events to pick:")
     for evt in events:
-        print(f"       {evt.run}:{evt.lumi}:{evt.event} (fill={evt.fill})")
+        print(f"       {evt.run}:{evt.lumi}:{evt.event}")
 
     run_pick_commands(args.dataset, event_txt, pick_root)
 

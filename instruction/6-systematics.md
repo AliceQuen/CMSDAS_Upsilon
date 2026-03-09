@@ -21,7 +21,7 @@ $$
 \delta_{\mathrm{tot}}=\sqrt{\delta_{\mathrm{yield}}^2+\delta_A^2+\delta_{\epsilon}^2+\delta_{\mathrm{lumi}}^2}.
 $$
 
-Note: luminosity uncertainty is usually provided officially by the experiment's luminosity group.
+**Note**: luminosity uncertainty is usually provided officially by the experiment's luminosity group.
 
 ## Example: Acceptance Systematics
 Due to limited time, we will use acceptance systematics as the main hands-on example.

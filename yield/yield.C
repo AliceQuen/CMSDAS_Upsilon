@@ -31,7 +31,6 @@ static const std::vector<std::string> INPUT_FILES = {
 };
 
 static const char* TREE_PATH = "rootuple/mm_tree";
-static const char* BR_DIMUON = "dimuon_p4";
 
 static const char* OUT_DIR   = "./results/2025G";
 static const char* CSV_BASE  = "./results/2025G/yields.csv";
@@ -47,6 +46,8 @@ static const double PT_SKIP_GE = 130.0;
 static const double YABS_MAX   = 2.4;
 static const int MIN_COUNTS_TO_FIT = 10;
 static const int NEDGE_BINS_SLOPE = 6;
+static const double kMuonAbsEtaMax = 2.0;
+static const double kMuonPtMin     = 3.1;
 
 static const double Y_EDGES[] = {0.0, 0.6, 1.2, 1.8, 2.4};
 static const int NY = (int)(sizeof(Y_EDGES)/sizeof(Y_EDGES[0])) - 1;
@@ -151,10 +152,27 @@ int yield() {
   const Long64_t nEntries = chain.GetEntries();
   std::cout << "Total entries: " << nEntries << "\n";
 
-  TLorentzVector* dimuon = nullptr;
+  TLorentzVector *dimuon_p4 = nullptr, *muonP_p4 = nullptr, *muonM_p4 = nullptr;
+  UInt_t nonia, trigger;
+  Int_t charge;
+  Float_t vProb;
+
   chain.SetBranchStatus("*", 0);
-  chain.SetBranchStatus(BR_DIMUON, 1);
-  chain.SetBranchAddress(BR_DIMUON, &dimuon);
+  chain.SetBranchStatus("dimuon_p4", 1);
+  chain.SetBranchStatus("muonP_p4", 1);
+  chain.SetBranchStatus("muonM_p4", 1);
+  chain.SetBranchStatus("nonia", 1);
+  chain.SetBranchStatus("trigger", 1);
+  chain.SetBranchStatus("charge", 1);
+  chain.SetBranchStatus("vProb", 1);
+
+  chain.SetBranchAddress("dimuon_p4", &dimuon_p4);
+  chain.SetBranchAddress("muonP_p4", &muonP_p4);
+  chain.SetBranchAddress("muonM_p4", &muonM_p4);
+  chain.SetBranchAddress("nonia", &nonia);
+  chain.SetBranchAddress("trigger", &trigger);
+  chain.SetBranchAddress("charge", &charge);
+  chain.SetBranchAddress("vProb", &vProb);
 
   std::vector<double> ptEdges = makePtEdges();
   const int NPT = (int)ptEdges.size() - 1;
@@ -183,8 +201,15 @@ int yield() {
 
   Long64_t filled = 0;
   for (Long64_t i = 0; i < nEntries; ++i) {
+    
     chain.GetEntry(i);
-    if (!dimuon) continue;
+
+    if (!dimuon_p4 || !muonP_p4 || !muonM_p4) continue;
+    if (std::abs(muonP_p4->Eta()) > kMuonAbsEtaMax) continue;
+    if (std::abs(muonM_p4->Eta()) > kMuonAbsEtaMax) continue;
+    if (muonP_p4->Pt() <= kMuonPtMin) continue;
+    if (muonM_p4->Pt() <= kMuonPtMin) continue;
+    if (nonia != 1 || !trigger || charge != 0 || vProb <= 0.01) continue;
 
     if (i % 1000000 == 0) {
       const double pct = (nEntries > 0) ? (100.0 * (double)i / (double)nEntries) : 0.0;
@@ -192,13 +217,13 @@ int yield() {
                 << " (" << pct << "%)\r" << std::flush;
     }
 
-    const double pt = dimuon->Pt();
+    const double pt = dimuon_p4->Pt();
     if (pt >= PT_SKIP_GE) continue;
 
-    const double ya = std::fabs(dimuon->Rapidity());
+    const double ya = std::fabs(dimuon_p4->Rapidity());
     if (ya >= YABS_MAX) continue;
 
-    const double m = dimuon->M();
+    const double m = dimuon_p4->M();
     if (m < M_MIN_GLOBAL || m >= M_MAX_GLOBAL) continue;
 
     const int iy = findBinY(ya);

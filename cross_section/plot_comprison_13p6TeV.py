@@ -16,7 +16,7 @@ from matplotlib.ticker import ScalarFormatter, NullLocator
 CROSS_2025_CSV = Path("results/cross_section.csv")
 LUMI_2025_CSV = Path("../luminosity/results/2025G.csv")
 
-DATA2022_DIR = Path("/afs/ihep.ac.cn/users/y/yiyangzhao/Research/CMS_Run3_Upsilon/CMS_Plot")
+DATA2022_DIR = Path("/eos/home-y/yiyangz/public/CMSDAS/2022")
 DATA2022_FILES = {
     (1, 1): DATA2022_DIR / "data11.txt",
     (1, 2): DATA2022_DIR / "data12.txt",

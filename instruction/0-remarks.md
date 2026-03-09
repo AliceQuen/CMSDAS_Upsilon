@@ -36,7 +36,6 @@ ssh <cern_username>@lxplus8.cern.ch
 
 cd /path/to/CMSDAS_Upsilon
 
-source /cvmfs/cms.cern.ch/cmsset_default.sh
 voms-proxy-init -voms cms
 voms-proxy-info --timeleft
 ```
