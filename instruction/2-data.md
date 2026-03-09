@@ -3,7 +3,7 @@
 ## Datasets
 We will use 2025 `ParkingDoubleMuonLowMass` samples in MINIAOD format:
 
-| Era | Dataset | Recorded by CMS [$\mathrm{fb}^{-1}$] | Run range |
+| Era | Dataset | Integrated Luminosity Recorded by CMS [$\mathrm{fb}^{-1}$] | Run range |
 | --- | --- | --- | --- |
 | 2025F | `/ParkingDoubleMuonLowMass*/Run2025F-PromptReco-v1/MINIAOD` | 27.3 | 396598-397853 |
 | 2025G | `/ParkingDoubleMuonLowMass*/Run2025G-PromptReco-v1/MINIAOD` | 23.0 | 397854-398903 |

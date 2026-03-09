@@ -14,10 +14,9 @@
 
 ## Cross-section
 For each state $\Upsilon(nS)$ ($n=1,2,3$), the measured quantity is
-$$
-\mathcal{B}(\Upsilon(nS)\to\mu^+\mu^-)\,\frac{d^2\sigma_n}{dp_\mathrm{T}\,dy}
-=\frac{N_n}{\mathcal{L}\,A_n\,\epsilon_n\,\Delta p_\mathrm{T}\,\Delta y}.
-$$
+
+$\mathcal{B}(\Upsilon(nS)\to\mu^+\mu^-)\,\frac{d^2\sigma_n}{dp_\mathrm{T}\,dy}
+=\frac{N_n}{\mathcal{L}\,A_n\,\epsilon_n\,\Delta p_\mathrm{T}\,\Delta y}.$
 
 Here:
 - $N_n$ is the fitted signal yield.
@@ -28,7 +27,7 @@ Here:
 ### Binning
 $|y|$: $[0.0,0.6]$, $[0.6,1.2]$, $[1.2,1.8]$, $[1.8,2.4]$
 
-$p_\mathrm{T}$: $0$-$20$ in $1$ GeV width, $20$-$40$ in $2$ GeV width, $[40,43]$, $[43,46]$, $[46,50]$, $[50,55]$, $[55,60]$, $[60,70]$, $[70,100]$, $[100,130]$
+$p_\mathrm{T}$: $0-20$ in $1$ GeV width, $20-40$ in $2$ GeV width, $[40,43]$, $[43,46]$, $[46,50]$, $[50,55]$, $[55,60]$, $[60,70]$, $[70,100]$, $[100,130]$
 
 > #### **Question**
 > 1. Is it always better to use finer bins?

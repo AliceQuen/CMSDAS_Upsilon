@@ -7,9 +7,9 @@ Why efficiency is needed:
 - the final selection also improves signal-to-background ratio, which stabilizes the mass fits and helps reduce statistical/fit uncertainty.
 
 ## Efficiency Definition
-$$
-\epsilon(p_\mathrm{T},|y|)=\frac{N^{\mathrm{sel}}_{\mathrm{reco}}(p_\mathrm{T},|y|)}{N^{\mathrm{fid}}_{\mathrm{gen}}(p_\mathrm{T},|y|)}.
-$$
+
+$\epsilon(p_\mathrm{T},|y|)=\frac{N^{\mathrm{sel}}_{\mathrm{reco}}(p_\mathrm{T},|y|)}{N^{\mathrm{fid}}_{\mathrm{gen}}(p_\mathrm{T},|y|)}$
+
 - denominator: generated fiducial events,
 - numerator: reconstructed events that pass final analysis requirements.
 
