@@ -8,7 +8,8 @@ A common angular variable is the polar angle $\theta^*$ in the helicity frame, w
 </p>
 
 In the helicity frame, a standard parameterization is 
-$$\frac{dN}{d\cos\theta^*} \propto 1 + \lambda_\vartheta \cos^2\theta^*$$.
+
+$\frac{dN}{d\cos\theta^*} \propto 1 + \lambda_\vartheta \cos^2\theta^*$.
 
 The default acceptance maps in this exercise assume unpolarized production, consistent with previous $\Upsilon$ polarization measurements. If the true production is polarized, the muon angular and kinematic distributions change.
 
@@ -29,6 +30,7 @@ For the transverse and longitudinal polarizations, we have
 $I_T(\cos\theta^*)=\frac{3}{8}\left(1+\cos^2\theta^*\right), \qquad I_L(\cos\theta^*)=\frac{3}{4}\left(1-\cos^2\theta^*\right)$.
 
 For each event in the unpolarized sample, compute
+
 $f_T(\cos\theta^*)=\frac{I_T(\cos\theta^*)}{I_T(\cos\theta^*)+I_L(\cos\theta^*)}$.
 
 Then, generate a random number $r\in[0,1)$. If $r<f_T$, classify the event as transverse; otherwise classify it as longitudinal. The polarization assignment and the acceptance counting can be done in the same event loop as acceptance calculation.
