@@ -8,7 +8,7 @@ A common angular variable is the polar angle $\theta^*$ in the helicity frame, w
 </p>
 
 In the helicity frame, a standard parameterization is 
-$\frac{dN}{d\cos\theta^*} \propto 1 + \lambda_\vartheta \cos^2\theta^*$.
+$$\frac{dN}{d\cos\theta^*} \propto 1 + \lambda_\vartheta \cos^2\theta^*$$.
 
 The default acceptance maps in this exercise assume unpolarized production, consistent with previous $\Upsilon$ polarization measurements. If the true production is polarized, the muon angular and kinematic distributions change.
 
