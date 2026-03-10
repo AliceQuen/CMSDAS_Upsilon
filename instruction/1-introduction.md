@@ -16,7 +16,7 @@
 For each state $\Upsilon(nS)$ ($n=1,2,3$), the measured quantity is
 
 $\mathcal{B}(\Upsilon(nS)\to\mu^+\mu^-)\,\frac{d^2\sigma_n}{dp_\mathrm{T}\,d|y|}
-=\frac{N_n}{\mathcal{L}\,A_n\,\epsilon_n\,\Delta p_\mathrm{T}\,2\Delta|y|}.$
+=\frac{N_n}{\mathcal{L}\,A_n\,\epsilon_n\,\Delta p_\mathrm{T}\,2\Delta|y|}$.
 
 Here:
 - $N_n$ is the fitted signal yield.

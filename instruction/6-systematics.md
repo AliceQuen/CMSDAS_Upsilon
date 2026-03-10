@@ -7,7 +7,7 @@ Every term in the cross-section expression can carry systematic uncertainty:
 
 $\mathcal{B}\frac{d^2\sigma}{dp_\mathrm{T}\,dy}
 \propto
-\frac{N}{\mathcal{L}\,A\,\epsilon}.$
+\frac{N}{\mathcal{L}\,A\,\epsilon}$.
 
 This means uncertainty can come from:
 - yield extraction ($N$),
@@ -16,7 +16,7 @@ This means uncertainty can come from:
 - integrated luminosity ($\mathcal{L}$).
 
 A common per-bin combination is
-$\delta_{\mathrm{tot}}=\sqrt{\delta_{\mathrm{yield}}^2+\delta_A^2+\delta_{\epsilon}^2+\delta_{\mathrm{lumi}}^2}.$
+$\delta_{\mathrm{tot}}=\sqrt{\delta_{\mathrm{yield}}^2+\delta_A^2+\delta_{\epsilon}^2+\delta_{\mathrm{lumi}}^2}$.
 
 **Note**: luminosity uncertainty is usually provided officially by the experiment's luminosity group.
 

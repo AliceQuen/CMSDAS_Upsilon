@@ -10,7 +10,7 @@ Why acceptance is needed:
 ## Acceptance Definition
 In each bin:
 
-$A(p_\mathrm{T},|y|)=\frac{N^{\mathrm{fid}}_{\mathrm{gen}}(p_\mathrm{T},|y|)}{N^{\mathrm{all}}_{\mathrm{gen}}(p_\mathrm{T},|y|)}.$
+$A(p_\mathrm{T},|y|)=\frac{N^{\mathrm{fid}}_{\mathrm{gen}}(p_\mathrm{T},|y|)}{N^{\mathrm{all}}_{\mathrm{gen}}(p_\mathrm{T},|y|)}$.
 - denominator: all generated $\Upsilon\to\mu^+\mu^-$ events in one bin,
 - numerator: events where both generated muons satisfy fiducial cuts.
 

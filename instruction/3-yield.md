@@ -19,7 +19,7 @@ const double tail[] = {20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 43, 46, 50, 5
 ### Fit Model
 The fit model is
 
-$F(m_{\mu\mu})=N_{1S}S_{1S}(m_{\mu\mu})+N_{2S}S_{2S}(m_{\mu\mu})+N_{3S}S_{3S}(m_{\mu\mu})+N_{\mathrm{bkg}}B(m_{\mu\mu}).$
+$F(m_{\mu\mu})=N_{1S}S_{1S}(m_{\mu\mu})+N_{2S}S_{2S}(m_{\mu\mu})+N_{3S}S_{3S}(m_{\mu\mu})+N_{\mathrm{bkg}}B(m_{\mu\mu})$.
 
 Core implementation excerpt:
 ```cpp
