@@ -13,12 +13,20 @@
 - Analysis Note: [AN-23-142](https://cms.cern.ch/iCMS/jsp/db_notes/noteInfo.jsp?cmsnoteid=CMS%20AN-2023/142)
 
 ## Cross Section
-For each state $\Upsilon(nS)$ ($n=1,2,3$), the measured quantity is
+The (production) cross section of $\Upsilon$ characterizes its production probability in the collision. Because the $\Upsilon$ has a very short lifetime, it decays before it can be detected by the detector. Therefore, we can only infer whether an $\Upsilon$ meson was produced by analyzing the more stable particles from $\Upsilon$'s decay, thereby measuring the cross section.
 
-$\mathcal{B}(\Upsilon(nS)\to\mu^+\mu^-)\,\frac{d^2\sigma_n}{dp_\mathrm{T}\,d|y|}
+More specifically, in this analysis, we will use the decay of $\Upsilon$ into two muons to do the measurement. 
+
+> #### **Question**
+> 1. Why is this decay used to measure the cross section?
+
+For each state $\Upsilon(\mathrm{nS})$ ($n=1,2,3$), the measured cross section is
+
+$\mathcal{B}(\Upsilon(\mathrm{nS})\to\mu^+\mu^-)\,\frac{d^2\sigma_n}{dp_\mathrm{T}\,d|y|}
 =\frac{N_n}{\mathcal{L}\,A_n\,\epsilon_n\,\Delta p_\mathrm{T}\,2\Delta|y|}$.
 
 Here:
+- $\mathcal{B}(\Upsilon(\mathrm{nS})\to\mu^+\mu^-)$ is the branching ratio (or probability) of $\Upsilon(\mathrm{nS})$ decaying into two muons.
 - $N_n$ is the fitted signal yield.
 - $A_n$ is the acceptance.
 - $\epsilon_n$ is the efficiency.

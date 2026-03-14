@@ -9,6 +9,10 @@ We will use 2025 `ParkingDoubleMuonLowMass` samples in MINIAOD format:
 | 2025F | `/ParkingDoubleMuonLowMass*/Run2025F-PromptReco-v1/MINIAOD` | 27.3 | 396598-397853 |
 | 2025G | `/ParkingDoubleMuonLowMass*/Run2025G-PromptReco-v1/MINIAOD` | 23.0 | 397854-398903 |
 
+We will use the `crab` system to process these datasets. In order to:
+- Select events containing two muons;
+- Convert the file format to `ntuple`, which is more convenient for direct use.
+
 ## CMSSW
 ```bash
 cd /path/to/CMSDAS_Upsilon/data
@@ -79,13 +83,19 @@ config.Data.outLFNDirBase = '/store/user/<user_name>/CMSDAS/'
 Then submit:
 ```bash
 crab submit crab_upsilon.py
-crab status -d CernJobs/crab_CMSDAS_Upsilon_2025E_ParkingDoubleMuonLowMass0_v1
 ```
 
 - CRAB is the scalable path for large data processing.
 - `Cert_Collisions2025_391658_398903_Muon.json` is the certified good-luminosity list for this run range.
     - It removes luminosity sections with known detector/DAQ/data-quality problems (for example unstable detector conditions, data-taking interruptions, or subdetector quality flags failing certification).
     - This ensures that accepted events come from periods where detector performance is validated for physics analysis, so your yield and cross-section normalization remain consistent and reproducible.
+
+You can use `crab status` to check the status of the jobs. 
+```bash
+crab status -d CernJobs/crab_CMSDAS_Upsilon_2025E_ParkingDoubleMuonLowMass0_v1
+```
+
+**Note**: there is no need to wait for the jobs to finish running completely. Due to time constraints, the subsequent steps will only use the data samples that have already been prepared.
 
 ## Check Data Distributions
 Run the plotting program:
