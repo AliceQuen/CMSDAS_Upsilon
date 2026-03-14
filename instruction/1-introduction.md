@@ -18,7 +18,7 @@ The (production) cross section of $\Upsilon$ characterizes its production probab
 More specifically, in this analysis, we will use the decay of $\Upsilon$ into two muons to do the measurement. 
 
 > #### **Question**
-> 1. Why is this decay used to measure the cross section?
+> 1. Why we choose this decay channel to measure the cross section?
 
 For each state $\Upsilon(\mathrm{nS})$ ($n=1,2,3$), the measured cross section is
 
