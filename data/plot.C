@@ -115,48 +115,18 @@ void plot() {
   chain.SetBranchStatus("dimuon_p4", 1);
   chain.SetBranchStatus("muonP_p4", 1);
   chain.SetBranchStatus("muonM_p4", 1);
+  chain.SetBranchStatus("vProb", 1);
+  chain.SetBranchStatus("trigger", 1);
+  chain.SetBranchStatus("charge", 1);
+  chain.SetBranchStatus("nonia", 1);
+  
   chain.SetBranchAddress("dimuon_p4", &dimuon_p4);
   chain.SetBranchAddress("muonP_p4", &muonP_p4);
   chain.SetBranchAddress("muonM_p4", &muonM_p4);
-
-  const bool has_vProb = (chain.GetBranch("vProb") != nullptr);
-  const bool has_trigger = (chain.GetBranch("trigger") != nullptr);
-  const bool has_charge = (chain.GetBranch("charge") != nullptr);
-  const bool has_nonia = (chain.GetBranch("nonia") != nullptr);
-
-  if (has_vProb) {
-    chain.SetBranchStatus("vProb", 1);
-    chain.SetBranchAddress("vProb", &vProb);
-  }
-  if (has_trigger) {
-    chain.SetBranchStatus("trigger", 1);
-    chain.SetBranchAddress("trigger", &trigger);
-  }
-  if (has_charge) {
-    chain.SetBranchStatus("charge", 1);
-    chain.SetBranchAddress("charge", &charge);
-  }
-  if (has_nonia) {
-    chain.SetBranchStatus("nonia", 1);
-    chain.SetBranchAddress("nonia", &nonia);
-  }
-
-  if (kRequireVertexProb && !has_vProb) {
-    std::cerr << "Requested vProb selection, but branch vProb is missing." << std::endl;
-    return;
-  }
-  if (kRequireTrigger && !has_trigger) {
-    std::cerr << "Requested trigger selection, but branch trigger is missing." << std::endl;
-    return;
-  }
-  if (kRequireOppositeCharge && !has_charge) {
-    std::cerr << "Requested charge selection, but branch charge is missing." << std::endl;
-    return;
-  }
-  if (kRequireSingleCandidate && !has_nonia) {
-    std::cerr << "Requested nonia selection, but branch nonia is missing." << std::endl;
-    return;
-  }
+  chain.SetBranchAddress("vProb", &vProb);
+  chain.SetBranchAddress("trigger", &trigger);
+  chain.SetBranchAddress("charge", &charge);
+  chain.SetBranchAddress("nonia", &nonia);
 
   TH1D h_dimuon_mass("h_dimuon_mass", "Dimuon mass;M_{#mu#mu} (GeV);Events", kMassBins, kMassMin, kMassMax);
   TH1D h_dimuon_pt("h_dimuon_pt", "Dimuon p_{T};p_{T} (GeV);Events", kDimuonPtBins, kDimuonPtMin, kDimuonPtMax);
@@ -175,22 +145,11 @@ void plot() {
 
   for (Long64_t i = 0; i < n_entries; ++i) {
     chain.GetEntry(i);
-
     if (dimuon_p4 == nullptr || muonP_p4 == nullptr || muonM_p4 == nullptr) {
       continue;
     }
-    if (kRequireTrigger && trigger == 0) {
-      continue;
-    }
-    if (kRequireOppositeCharge && charge != 0) {
-      continue;
-    }
-    if (kRequireVertexProb && vProb <= kMinVertexProb) {
-      continue;
-    }
-    if (kRequireSingleCandidate && nonia != 1) {
-      continue;
-    }
+
+    /*EDIT HERE*/
 
     h_dimuon_mass.Fill(dimuon_p4->M());
     h_dimuon_pt.Fill(dimuon_p4->Pt());

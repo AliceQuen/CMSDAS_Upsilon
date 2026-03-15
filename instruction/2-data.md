@@ -117,7 +117,12 @@ Inspect the output variable distributions in `/path/to/CMSDAS_Upsilon/data/resul
 > ```cpp
 > for (Long64_t i = 0; i < n_entries; ++i) {
 >   chain.GetEntry(i);
-> ...
+>   if (dimuon_p4 == nullptr || muonP_p4 == nullptr || muonM_p4 == nullptr) {
+>   continue;
+>   }
+>   
+>   /*EDIT HERE*/
+>   ...
 > }
 > ```
 > 2. Besides adding selections, remember to also edit the save path of figures.
