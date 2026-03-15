@@ -3,11 +3,13 @@
 This part combines $N$, $A$, $\epsilon$, and $\mathcal{L}$ to produce the differential cross sections and final figures.
 
 ## Python Setup
+**Note: Before continuing, please open a new terminal or reconnect to `lxplus8`.**
 
 ```bash
-cd /path/to/CMSDAS_Upsilon
+ssh <cern_username>@lxplus8.cern.ch
 
-source /cvmfs/sft.cern.ch/lcg/views/LCG_106/x86_64-el8-gcc11-opt/setup.sh
+cd /path/to/CMSDAS_Upsilon/data/CMSSW_15_0_18/src
+cmsenv
 
 python3 -c "import sys; print(sys.version)"
 python3 -c "import pandas,numpy,matplotlib,mplhep; print('python packages ok')"
