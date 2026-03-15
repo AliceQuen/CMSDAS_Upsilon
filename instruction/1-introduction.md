@@ -5,6 +5,7 @@
 - Enabled by this trigger, the measurement covers both low-$p_\mathrm{T}$ and high-$p_\mathrm{T}$ regions in one workflow.
 - The target phase space spans $p_\mathrm{T}=0-130$ GeV and $|y|<2.4$.
 - This is the first $\Upsilon$ cross-section measurement based on 2025 data and also serves as a data-quality validation.
+- Note: in collider physics, the transverse momentum ($p_\mathrm{T}$) is the component of a particle momentum perpendicular to the beam axis. The pseudorapidity ($\eta$) is defined as $-\ln\tan(\theta/2)$, where $\theta$ is the polar angle with respect to the beam direction. The rapidity ($y$) is defined as $\frac{1}{2}\ln\frac{E+p_z}{E-p_z}$. For highly relativistic particles, $y$ and $\eta$ are close, but for massive particles they are not exactly the same.
 
 ### References
 - [Pre-Approval talk](https://indico.cern.ch/event/1505578/)
@@ -53,11 +54,15 @@ To inspect the full trigger content, use [cmshltinfo](https://cmshltinfo-dev.app
 1. Search `HLT_Dimuon0_Upsilon`. If not found, set year to `2025` and ensure `Parking` is selected in `Stream Select`.
 2. Open the path and go to `filters`.
 3. Choose a run range.
-4. In the second filter (`hltL1s12ForUpsilonDimuon0Mass8to12`), read `L1SeedsLogicalExpression` to identify L1 seeds.
-5. Use the `event` decision to understand how events propagate through the HLT path.
+4. Use the `event` decision to understand how events propagate through the HLT path.
+
+In trigger names, the prefix usually tells the trigger level: `HLT_` denotes a High-Level Trigger path. The object part of the name describes the reconstructed candidate and its main requirements. 
+
+For example, `HLT_Dimuon0_Upsilon` means an HLT path targeting dimuon candidates, with a low threshold encoded by `0`, and specifically designed for the $\Upsilon \to \mu^+\mu^-$ region. Likewise, the older `HLT_Dimuon10_Upsilon_y1p4` indicates a dimuon $\Upsilon$ path with $p_\mathrm{T}>10$ GeV and $|y|<1.4$ requirements.
+
 
 > #### **Task**
-> Find the trigger path used in the 2022 $\Upsilon$ cross-section measurement (`HLT_Dimuon10_Upsilon_y1p4`), inspect its filters, and summarize the key differences with the 2025 setup.
+> Find the trigger path used in the 2022 $\Upsilon$ cross-section measurement (`HLT_Dimuon10_Upsilon_y1p4`), inspect its filters that contain $p_\mathrm{T}>10$ GeV and $|y|<1.4$ requirements, and summarize the key differences with the 2025 setup.
 
 > #### **Question**
 > 1. Compare `HLT_Dimuon10_Upsilon_y1p4` and `HLT_Dimuon0_Upsilon`: what filter-level differences do you see?
