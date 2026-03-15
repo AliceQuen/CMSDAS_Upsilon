@@ -37,7 +37,7 @@ Threshold-variation setup:
 >    cp acceptance.C acceptance_pt3p0.C
 >    cp acceptance.C acceptance_pt3p2.C
 >    ```
-> 2. In each variant, change both the threshold and output file names to avoid overwriting nominal results.
+> 2. In each variant, change both the threshold, function name (thus has the same name as the file), and output file names to avoid overwriting nominal results.
 >    Threshold line:
 >    ```cpp
 >    const double kMuonPtMin     = 3.1;
