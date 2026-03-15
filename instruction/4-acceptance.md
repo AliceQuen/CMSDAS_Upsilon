@@ -32,7 +32,7 @@ if (gen_muonN_p4->Pt() <= kMuonPtMin) continue;
 Passed[iY][iPt] += 1.0;
 ```
 
-
+**Note: DO NOT MODIFY the `kInputRoot` path in `acceptance.C`. The existing path can be accessed.**
 ```bash
 cd /path/to/CMSDAS_Upsilon/acceptance
 root -l acceptance.C

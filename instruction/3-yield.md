@@ -65,6 +65,7 @@ RooFitResult* fr = model.fitTo(
 - `Extended(false)` uses shape information only; normalization/yield interpretation is weaker.
 
 ## Yield Fit
+**Note: DO NOT MODIFY the `INPUT_FILES` path in `yield.C`. The existing path can be accessed.**
 ```bash
 cd /path/to/CMSDAS_Upsilon/yield
 root -l yield.C

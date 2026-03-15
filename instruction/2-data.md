@@ -98,6 +98,7 @@ crab status -d CernJobs/crab_CMSDAS_Upsilon_2025E_ParkingDoubleMuonLowMass0_v1
 **Note**: there is no need to wait for the jobs to finish running completely. Due to time constraints, the subsequent steps will only use the data samples that have already been prepared.
 
 ## Check Data Distributions
+**Note: DO NOT MODIFY the `kInputFile` path in `plot.C`. The existing path can be accessed.**
 Run the plotting program:
 ```bash
 cd /path/to/CMSDAS_Upsilon/data

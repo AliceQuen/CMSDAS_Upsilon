@@ -35,6 +35,7 @@ if (nonia != 1 || !trigger || charge != 0 || vProb <= 0.01) continue;
 Passed[iY][iPt] += 1.0;
 ```
 
+**Note: DO NOT MODIFY the `kInputRoot` path in `mc_efficiency.C`. The existing path can be accessed.**
 ```bash
 cd /path/to/CMSDAS_Upsilon/efficiency/mc_efficiency
 root -l mc_efficiency.C
