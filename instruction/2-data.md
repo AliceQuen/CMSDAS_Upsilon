@@ -9,11 +9,15 @@ We will use 2025 `ParkingDoubleMuonLowMass` samples in MINIAOD format:
 | 2025F | `/ParkingDoubleMuonLowMass*/Run2025F-PromptReco-v1/MINIAOD` | 27.3 | 396598-397853 |
 | 2025G | `/ParkingDoubleMuonLowMass*/Run2025G-PromptReco-v1/MINIAOD` | 23.0 | 397854-398903 |
 
-We will use the `crab` system to process these datasets. In order to:
+In this section, we will use programs caller `ntuplizer` to process these raw datasets in order to:
 - Select events containing two muons;
 - Convert the file format to `ntuple`, which is more convenient for direct use.
 
 ## CMSSW
+CMSSW is the software framework used by CMS for simulation, reconstruction, and data analysis. It provides the standard environment and tools to read CMS data formats, run analysis code, and process events within the CMS software ecosystem. For CMS analyses, it is the basic platform for most official workflows.
+- [CMS Offline WorkBook (official CMS software introduction and workflow reference)](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBook)
+- [CMSSW setup and first steps ](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookChapter1)
+
 ```bash
 cd /path/to/CMSDAS_Upsilon/data
 
@@ -81,7 +85,10 @@ Code-output relation:
 > - `Scan` can read key branches such as `dimuon_p4`, `trigger`, and `vProb`.
 
 ### CRAB
-In `crab_upsilon.py`, the following lines control request name (`myname`), dataset input (`mydata`), certified-lumi filtering (`lumiMask`), and output directory (`outLFNDirBase`):
+CRAB, CMS Remote Analysis Builder, is the standard CMS tool for submitting analysis jobs to distributed computing resources. It is commonly used to process large datasets or Monte Carlo samples on the Grid without running locally. CRAB handles job splitting, submission, monitoring, output collection, and interaction with CMS computing infrastructure. 
+
+We will use the `CRAB` system to process these datasets. In `crab_upsilon.py`, the following lines control request name (`myname`), dataset input (`mydata`), certified-lumi filtering (`lumiMask`), and output directory (`outLFNDirBase`):
+
 ```python
 myname='CMSDAS_Upsilon_2025E_ParkingDoubleMuonLowMass0_v1'
 mydata='/ParkingDoubleMuonLowMass0/Run2025E-PromptReco-v1/MINIAOD'

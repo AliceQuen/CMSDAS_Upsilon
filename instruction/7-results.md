@@ -63,5 +63,5 @@ Plot meaning:
 - `plot_comprison_13p6TeV.py` provides 2025/2022 ratios for consistency and evolution checks.
 
 > #### **Question**
-> 1. After inspecting these `.pdf`, what are the observed differential cross-section trends versus $p_\mathrm{T}$ and rapidity?
-> 2. Why do these trends appear, and are they consistent with your physical expectation?
+> 3. After inspecting these `.pdf`, what are the observed differential cross-section trends versus $p_\mathrm{T}$ and rapidity?
+> 4. Why do these trends appear, and are they consistent with your physical expectation?

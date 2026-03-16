@@ -51,6 +51,6 @@ Outputs are efficiency maps in $(p_\mathrm{T},|y|)$:
 
 
 > #### **Question**
-> In low-$p_\mathrm{T}$ (high-$p_\mathrm{T}$) bins, which numerator requirement is most likely to dominate the efficiency loss (`trigger`, `vProb`, or acceptance selections), and why?
+> 1. In low-$p_\mathrm{T}$ (high-$p_\mathrm{T}$) bins, which numerator requirement is most likely to dominate the efficiency loss (`trigger`, `vProb`, or acceptance selections), and why?
 > #### **Task**
 > Verify your assumption by modifying the program by yourself to calculate the efficiency of each selection separately.

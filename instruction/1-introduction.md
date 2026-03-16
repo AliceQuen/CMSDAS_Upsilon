@@ -6,20 +6,41 @@
 - The target phase space spans $p_\mathrm{T}=0-130$ GeV and $|y|<2.4$.
 - This is the first $\Upsilon$ cross-section measurement based on 2025 data and also serves as a data-quality validation.
 
-Note: in collider physics, the transverse momentum ($p_\mathrm{T}$) is the component of a particle momentum perpendicular to the beam axis. The pseudorapidity ($\eta$) is defined as $-\ln\tan(\theta/2)$, where $\theta$ is the polar angle with respect to the beam direction. The rapidity ($y$) is defined as $\frac{1}{2}\ln\frac{E+p_z}{E-p_z}$. For highly relativistic particles, $y$ and $\eta$ are close, but for massive particles they are not exactly the same.
+
+Note: in collider physics, the symbols for common physical varibles are defined as follows:
+- The transverse momentum, $p_\mathrm{T}$, is the component of a particle momentum perpendicular to the beam axis;
+- The rapidity, $y$ is defined as $\frac{1}{2}\ln\frac{E+p_z}{E-p_z}$;
+- The pseudorapidity, $\eta$, is defined as $-\ln\tan(\theta/2)$, where $\theta$ is the polar angle with respect to the beam direction;
+- For highly relativistic particles, $y$ and $\eta$ are close, but for massive particles they are not exactly the same.
+
+> #### **Question**
+> 1. In the analysis that follows, we use $\eta$ in selections of $\mu$ and $y$ in selections of $\Upsilon$. Given the previous definitions, consider why.
+
 
 ### References
+#### Analysis References
 - [Pre-Approval talk](https://indico.cern.ch/event/1505578/)
 - [Approval talk](https://indico.cern.ch/event/1602931/#2-approval-of-bph-24-004-measu)
 - CADI: [BPH-24-004](https://cms.cern.ch/iCMS/analysisadmin/cadilines?line=BPH-24-004)
 - Analysis Note: [AN-23-142](https://cms.cern.ch/iCMS/jsp/db_notes/noteInfo.jsp?cmsnoteid=CMS%20AN-2023/142)
+
+#### Technical References
+- [Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners)
+- [ROOT documentation](https://root.cern.ch/root/htmldoc/guides/users-guide/ROOTUsersGuide.html)
+- [ROOT tutorials and examples](https://root.cern.ch/doc/master/group__tutorials.html)
+- [RooFit documentation](https://root.cern.ch/doc/master/group__Roofitmain.html)
+- [CMS Offline WorkBook (official CMS software introduction and workflow reference)](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBook)
+- [CMSSW setup and first steps ](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookChapter1)
+- [CMS DAS pre-exercises](https://fnallpc.github.io/cms-das-pre-exercises/)
+- [PDG live (the reference to the particle properties)](https://pdglive.lbl.gov/)
+
 
 ## Cross Section
 The (production) cross section of $\Upsilon$ characterizes its production probability in the collision. Because the $\Upsilon$ has a very short lifetime, it decays before it can be detected by the detector. Therefore, we can only infer whether an $\Upsilon$ meson was produced by analyzing the more stable particles from $\Upsilon$'s decay, thereby measuring the cross section.
 
 More specifically, in this analysis, we will use the decay of $\Upsilon\to\mu^+\mu^-$ to do the measurement. 
 > #### **Question**
-> 1. Using PDG Live (https://pdglive.lbl.gov), search common decay modes of $\Upsilon(\mathrm{nS})$ ($n=1,2,3$). Why we choose this decay channel ($\Upsilon\to\mu^+\mu^-$) to measure the cross section?
+> 2. Using PDG Live (https://pdglive.lbl.gov), search common decay modes of $\Upsilon(\mathrm{nS})$ ($n=1,2,3$). Why we choose this decay channel ($\Upsilon\to\mu^+\mu^-$) to measure the cross section?
 
 For each state $\Upsilon(\mathrm{nS})$ ($n=1,2,3$), the measured cross section is
 
@@ -65,10 +86,10 @@ For example, `HLT_Dimuon0_Upsilon` means an HLT path targeting dimuon candidates
 > Find the trigger path used in the 2022 $\Upsilon$ cross-section measurement (`HLT_Dimuon10_Upsilon_y1p4`), inspect its filters that contain $p_\mathrm{T}>10$ GeV and $|y|<1.4$ requirements, and summarize the key differences with the 2025 setup.
 
 > #### **Question**
-> 1. Compare `HLT_Dimuon10_Upsilon_y1p4` and `HLT_Dimuon0_Upsilon`: what filter-level differences do you see?
-> 2. What is the benefit of using `HLT_Dimuon0_Upsilon`?
+> 3. Compare `HLT_Dimuon10_Upsilon_y1p4` and `HLT_Dimuon0_Upsilon`: what filter-level differences do you see?
+> 4. What is the benefit of using `HLT_Dimuon0_Upsilon`?
 
-## Tutorial Roadmap
+## Analysis Overview
 - `Part 2` (`Data`): produce/inspect ntuples and validate baseline data distributions.
 - `Part 3` (`Yield`): extract $N_{1S}$, $N_{2S}$, $N_{3S}$ with mass fits in each analysis bin.
 - `Part 4` (`Acceptance`): evaluate geometric/kinematic acceptance from generated-level information.

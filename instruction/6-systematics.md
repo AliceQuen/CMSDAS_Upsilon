@@ -1,6 +1,8 @@
 # Part 6 - Systematics
 
-This part introduces systematic uncertainties.
+Uncertainties quantify the precision and reliability of a measurement. They are usually divided into statistical uncertainties, which arise from the finite size of the data sample, and systematic uncertainties, which come from sources such as detector effects, efficiency corrections, fitting choices, luminosity, or modeling assumptions. A complete result should report both types of uncertainties clearly.
+
+The statistical uncertainties comes directly from the previous use of Roofit to fit the yield data. In this section, we will evaluate systematics uncertainties.
 
 ## Sources
 Every term in the cross-section expression can carry systematic uncertainty:

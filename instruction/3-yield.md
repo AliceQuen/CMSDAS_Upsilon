@@ -15,7 +15,9 @@ const double tail[] = {20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 43, 46, 50, 5
 - a per-bin fit allows direct propagation of statistical uncertainties.
 
 ### Fit Model
-The fit model is
+RooFit is a ROOT-based toolkit designed for fitting. It is widely used in high-energy physics to build probability density functions (PDFs), perform maximum-likelihood fits, and extract signal yields from data. In this part, we will use RooFit for modeling invariant-mass distributions and separating signal from background.
+
+The fit model in this analysis is:
 
 $F(m_{\mu\mu})=N_{1S}S_{1S}(m_{\mu\mu})+N_{2S}S_{2S}(m_{\mu\mu})+N_{3S}S_{3S}(m_{\mu\mu})+N_{\mathrm{bkg}}B(m_{\mu\mu})$.
 

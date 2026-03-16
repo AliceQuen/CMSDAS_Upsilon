@@ -5,15 +5,15 @@ The core tutorial should be completed in order. `Part 8` and `Part 9` are option
 
 All sections use the same three callout styles:
 > #### **Task**
-> An operation you should **complete by yourself** (for example: edit code, fill a command placeholder, verify an output).
+> An operation you should _**complete by yourself**_ (for example: edit code, fill a command placeholder, verify an output).
 
 > #### **Question**
-> A physics or methodology question for you to **think and discuss**.
+> A physics or methodology question for you to _**think and discuss**_.
 
 > #### **Checkpoint**
-> A **required status check** before moving forward.
+> A _**required status check**_ before moving forward.
 
-Code excerpts show only key lines.
+Code excerpts show **only key lines**.
 If intermediate lines are omitted, they are marked with `...`.
 
 ## Course Structure
