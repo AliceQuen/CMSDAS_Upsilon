@@ -5,7 +5,8 @@
 - Enabled by this trigger, the measurement covers both low-$p_\mathrm{T}$ and high-$p_\mathrm{T}$ regions in one workflow.
 - The target phase space spans $p_\mathrm{T}=0-130$ GeV and $|y|<2.4$.
 - This is the first $\Upsilon$ cross-section measurement based on 2025 data and also serves as a data-quality validation.
-- Note: in collider physics, the transverse momentum ($p_\mathrm{T}$) is the component of a particle momentum perpendicular to the beam axis. The pseudorapidity ($\eta$) is defined as $-\ln\tan(\theta/2)$, where $\theta$ is the polar angle with respect to the beam direction. The rapidity ($y$) is defined as $\frac{1}{2}\ln\frac{E+p_z}{E-p_z}$. For highly relativistic particles, $y$ and $\eta$ are close, but for massive particles they are not exactly the same.
+
+Note: in collider physics, the transverse momentum ($p_\mathrm{T}$) is the component of a particle momentum perpendicular to the beam axis. The pseudorapidity ($\eta$) is defined as $-\ln\tan(\theta/2)$, where $\theta$ is the polar angle with respect to the beam direction. The rapidity ($y$) is defined as $\frac{1}{2}\ln\frac{E+p_z}{E-p_z}$. For highly relativistic particles, $y$ and $\eta$ are close, but for massive particles they are not exactly the same.
 
 ### References
 - [Pre-Approval talk](https://indico.cern.ch/event/1505578/)
@@ -16,10 +17,9 @@
 ## Cross Section
 The (production) cross section of $\Upsilon$ characterizes its production probability in the collision. Because the $\Upsilon$ has a very short lifetime, it decays before it can be detected by the detector. Therefore, we can only infer whether an $\Upsilon$ meson was produced by analyzing the more stable particles from $\Upsilon$'s decay, thereby measuring the cross section.
 
-More specifically, in this analysis, we will use the decay of $\Upsilon$ into two muons to do the measurement. 
-
+More specifically, in this analysis, we will use the decay of $\Upsilon\to\mu^+\mu^-$ to do the measurement. 
 > #### **Question**
-> 1. Why we choose this decay channel to measure the cross section?
+> 1. Using PDG Live (https://pdglive.lbl.gov), search common decay modes of $\Upsilon(\mathrm{nS})$ ($n=1,2,3$). Why we choose this decay channel ($\Upsilon\to\mu^+\mu^-$) to measure the cross section?
 
 For each state $\Upsilon(\mathrm{nS})$ ($n=1,2,3$), the measured cross section is
 

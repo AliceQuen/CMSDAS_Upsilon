@@ -95,3 +95,7 @@ Use both fit `.pdf` and `results_ext.csv` to check:
 > 1. single Crystall-Ball function,
 > 2. double-Gaussian function.
 > Re-examine the fitting results (`.pdf` and `.csv`) to determine whether the fitting function fully describes the shape of the signal. Use these results to further elaborate on your answer to previous Question 3.
+
+> #### **Question**
+> 4. Why can we only observe the three signal peaks of $\Upsilon(\mathrm{nS})$ ($n=1,2,3$)? Is it because the mass of $\Upsilon(\mathrm{4S})$ is too large? 
+> 5. Using PDG Live (https://pdglive.lbl.gov), search the mass and decay modes of $\Upsilon(\mathrm{4S})$. What is the branching ratio for $\Upsilon(\mathrm{4S})\to\mu^+\mu^-$? Why is it so small compared to $\Upsilon(\mathrm{nS})$ ($n=1,2,3$)?
