@@ -42,7 +42,7 @@ dasgoclient --query="file dataset=/ParkingDoubleMuonLowMass0/Run2025E-PromptReco
 > cmsRun run_upsilon.py inputFiles=<one_MINIAOD_file_from_your_DAS_query>
 > ```
 
-After production, inspect the output:
+After production, let's explore the file. 
 ```bash
 root -l rootuple.root
 ...
@@ -53,6 +53,22 @@ root [4] mm_tree->Show(0)
 root [5] mm_tree->Scan("dimuon_p4.Pt():dimuon_p4.Rapidity():trigger","","",5)
 root [6] .q
 ```
+
+The output of `mm_tree->Print()` lists all the available variables in our sample file. The meanings of variables that we will use are as follows:
+
+| Variable | Format | Meaning  |
+| --- | --- | --- |
+| `run` | `unsigned int` | run number |
+| `event` | `unsigned long` | event number |
+| `lumiblock` | `unsigned int` | luminosity section number |
+| `nonia` | `unsigned int` | index of the onia-candidate within the event |
+| `trigger` | `unsigned int` | trigger flag for the selected $\Upsilon$ candidate, `1` means the event passed the `HLT_Dimuon0_Upsilon` trigger |
+| `charge` | `int` | sum of the two muon charges |
+| `dimuon_p4` | `TLorentzVector` | reconstructed 4-momentum of the $\Upsilon$ candidate, can be used to compute $p_\mathrm{T}$, $y$, mass, $\eta$, $\phi$, etc. |
+| `muonP_p4` | `TLorentzVector` | reconstructed 4-momentum of the $\mu^{+}$ |
+| `muonM_p4` | `TLorentzVector` | reconstructed 4-momentum of the \mu^{-}$ |
+| `vProb` | `float` | vertex-fit probability of the dimuon candidate, larger values indicate a better fit quality, thus more likely represent real $\Upsilon$ rather than background |
+
 
 Code-output relation:
 - `run_upsilon.py` builds and filters dimuon candidates.
