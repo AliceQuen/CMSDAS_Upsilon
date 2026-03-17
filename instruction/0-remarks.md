@@ -1,5 +1,11 @@
 # Part 0 - Remarks
 
+## Facilitators
+
+* [Yiyang Zhao (Tsinghua University)](mailto:yiyang.zhao@cern.ch)
+* [Yuxiao Wang (Tsinghua University)](mailto:yuxiao.wang@cern.ch)
+* [Junkai Qin  (Tsinghua University)](mailto:junkai.qin@cern.ch)
+
 ## Miscellaneous Notes
 The core tutorial should be completed in order. `Part 8` and `Part 9` are optional extensions.
 
