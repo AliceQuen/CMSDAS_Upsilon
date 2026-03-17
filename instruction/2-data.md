@@ -48,7 +48,7 @@ dasgoclient --query="file dataset=/ParkingDoubleMuonLowMass0/Run2025E-PromptReco
 
 After production, let's explore the file. The file is stored in `.root` format.
 - [ROOT documentation](https://root.cern.ch/root/htmldoc/guides/users-guide/ROOTUsersGuide.html)
-- [ROOT tutorials and examples](https://root.cern.ch/doc/master/group__tutorials.html)
+- [ROOT tutorials and examples](https://root.cern/doc/master/group__Tutorials.html)
 
 
 ```bash

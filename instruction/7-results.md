@@ -70,5 +70,7 @@ Plot meaning:
 - `plot_comprison_13p6TeV.py` provides 2025/2022 ratios for consistency and evolution checks.
 
 > #### **Question**
-> 3. After inspecting these `.pdf`, what are the observed differential cross-section trends versus $p_\mathrm{T}$ and rapidity?
+> 3. After inspecting these `.pdf`, what are the observed differential cross-section trends versus $p_\mathrm{T}$ and $y$? 
 > 4. Why do these trends appear, and are they consistent with your physical expectation?
+> 5. In `2025vs2022.pdf`, we have plotted ratios of our new measurement results over the 2022 results as functions of $p_\mathrm{T}$ and $y$. Are they consistent with 1 within the uncertainty? 
+> 6. If some points are inconsistent, apart from not accounting all sources of systematics, what other reasons might there be? Hint: we only used MC to calculate efficiency. Conduct research by yourself to find possible solutions.

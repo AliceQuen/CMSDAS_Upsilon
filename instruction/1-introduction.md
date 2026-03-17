@@ -27,6 +27,7 @@ Note: in collider physics, the symbols for common physical varibles are defined 
 #### Technical References
 - [Linux command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners)
 - [ROOT documentation](https://root.cern.ch/root/htmldoc/guides/users-guide/ROOTUsersGuide.html)
+- [ROOT tutorials and examples](https://root.cern/doc/master/group__Tutorials.html)
 - [RooFit documentation](https://root.cern.ch/doc/master/group__Roofitmain.html)
 - [CMS Offline WorkBook (official CMS software introduction and workflow reference)](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBook)
 - [CMSSW setup and first steps ](https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookChapter1)
