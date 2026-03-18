@@ -82,9 +82,6 @@ In trigger names, the prefix usually tells the trigger level: `HLT_` denotes a H
 For example, `HLT_Dimuon0_Upsilon` means an HLT path targeting dimuon candidates, with a low threshold encoded by `0`, and specifically designed for the $\Upsilon \to \mu^+\mu^-$ region. Likewise, the older `HLT_Dimuon10_Upsilon_y1p4` indicates a dimuon $\Upsilon$ path with $p_\mathrm{T}>10$ GeV and $|y|<1.4$ requirements.
 
 
-> #### **Task**
-> Find the trigger path used in the 2022 $\Upsilon$ cross-section measurement (`HLT_Dimuon10_Upsilon_y1p4`), inspect its filters that contain $p_\mathrm{T}>10$ GeV and $|y|<1.4$ requirements, and summarize the key differences with the 2025 setup.
-
 > #### **Question**
 > 3. Compare the $p_\mathrm{T}$ and $|y|$ requirements in `HLT_Dimuon10_Upsilon_y1p4` and `HLT_Dimuon0_Upsilon`: what filter-level differences do you see?
 > 4. What is the benefit of using `HLT_Dimuon0_Upsilon`?
