@@ -20,7 +20,7 @@ python3 -c "import uproot,numpy; print('event display python setup ok')"
 
 ## Pick Events
 
-Run the script (example with ntuple input):
+Run the script (**do not** edit the input ntuple and dataset):
 
 ```bash
 python3 event_display.py \
